@@ -20,6 +20,7 @@ const collectEmployees = function() {
         // lastName
       let lastName = prompt("Please enter your last name");
        // salary 
+      //  worked on this with a tutor, using Float instead of Int got rid of my console error
       let salary = parseFloat(prompt("please enter salary"));
 
       console.log(firstName);
@@ -36,6 +37,7 @@ const collectEmployees = function() {
        addEmployees = false;
       }
     }
+    // this works better outside of the function
       return employeesArray
     //};
   }
@@ -45,13 +47,11 @@ const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
    // My instructor Dan wrote this comment:  use a for loop to go through all the objects
   // My instructor Dan wrote this comment:  get salaries from objects
-  /*const salary = employeesArray.filter(employeesArray => employeesArray.salary >= 0);
-  for (let i = 0; 1 < salary.length; i++){
-    sum +- salary[i];
-  }
-  let averageSalary = sum / salary.length;
-  console.log(`The average employee salary between ${salary.length} employee(s) is ${averageSalary}`);
-  }*/
+
+  // // idea/notes for making the average salary
+  // let averageSalary = sum / salary.length;
+  // console.log(`The average employee salary between ${salary.length} employee(s) is ${averageSalary}`);
+  // }*/
 
   let totalSalary = 0;
   let numEmp = employeesArray.length;
@@ -60,6 +60,7 @@ const displayAverageSalary = function(employeesArray) {
     totalSalary = totalSalary + employeesArray[i].salary;
   }
 
+  // the below are examples of String Concatention: one of the operands is a string, the + operator concatenates (joins) them into a single string.
   const avgSalary = totalSalary/numEmp;
   console.log("Average Salary is: "+avgSalary);
 
@@ -69,6 +70,11 @@ const displayAverageSalary = function(employeesArray) {
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   // My instructor Dan wrote this comment: don't forget: Math.floor(Math.random()*# of employees)
+  // Select a random employee
+  // The +JSON.stringify was used to convert the object into a string -- examples here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+  const randomEmployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
+  // to follow the assignment guidelines use randomEmployee.firstName + " " + randomEmployee.lastName instead of +JSON.stringify(randomEmployee));
+  console.log("Congratulations to the random employee is: " + randomEmployee.firstName + " " + randomEmployee.lastName);
 }
 /*
   ====================
