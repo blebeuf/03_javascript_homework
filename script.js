@@ -7,6 +7,9 @@
   // make employee objects
   // add them to an array
 
+  // Get a reference to the #add-employees-btn element
+const addEmployeesBtn = document.querySelector('#add-employees-btn');
+
   // Collect employee data
 let employeesArray = []
 const collectEmployees = function() {
@@ -17,8 +20,10 @@ const collectEmployees = function() {
         // lastName
       let lastName = prompt("Please enter your last name");
        // salary 
-      let salary = prompt("please enter salary");
+      let salary = parseFloat(prompt("please enter salary"));
 
+      console.log(firstName);
+    
       let employee = {
         firstName: firstName,
         lastName: lastName,
@@ -28,27 +33,37 @@ const collectEmployees = function() {
       console.log(employeesArray);
       let addAgain = confirm("Would you like to add more employees?")
       if (!addAgain){
-        return employeesArray
+       addEmployees = false;
       }
-
-    };
+    }
+      return employeesArray
+    //};
   }
-// Get a reference to the #add-employees-btn element
-const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
    // My instructor Dan wrote this comment:  use a for loop to go through all the objects
   // My instructor Dan wrote this comment:  get salaries from objects
-  const salary = employeesArray.filter(employeesArray => employeesArray.salary >= 0);
+  /*const salary = employeesArray.filter(employeesArray => employeesArray.salary >= 0);
   for (let i = 0; 1 < salary.length; i++){
     sum +- salary[i];
   }
   let averageSalary = sum / salary.length;
   console.log(`The average employee salary between ${salary.length} employee(s) is ${averageSalary}`);
+  }*/
+
+  let totalSalary = 0;
+  let numEmp = employeesArray.length;
+
+  for(i=0; i<employeesArray.length;i++){
+    totalSalary = totalSalary + employeesArray[i].salary;
   }
+
+  const avgSalary = totalSalary/numEmp;
+  console.log("Average Salary is: "+avgSalary);
+
+}
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
@@ -68,6 +83,9 @@ const displayEmployees = function(employeesArray) {
 
   // Clear the employee table
   employeeTable.innerHTML = '';
+
+  
+
 
   // Loop through the employee data and create a row for each employee
   for (let i = 0; i < employeesArray.length; i++) {
