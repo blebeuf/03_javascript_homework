@@ -6,9 +6,8 @@ This application takes employee payroll data and complies it in a list, while ca
 
 ## Usage
 
-  
-    ![Screen of the employee Payroll tracker](./Screenshot_employee_payroll.png)
-  
+  ![Screenshot_employee_payroll](https://github.com/blebeuf/03_javascript_homework/assets/23405383/5b2d92d9-4061-4400-823a-3efbd13ddf6c)
+
 
 ## Credits
 
