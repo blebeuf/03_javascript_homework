@@ -7,7 +7,7 @@ This application takes employee payroll data and complies it in a list, while ca
 ## Usage
 
   
-    ![Screen of the employee Payroll tracker](Screenshot_employee_payroll.png)
+    ![Screen of the employee Payroll tracker](./Screenshot_employee_payroll.png)
   
 
 ## Credits
