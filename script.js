@@ -37,7 +37,6 @@ const collectEmployees = function() {
        addEmployees = false;
       }
     }
-    // this works better outside of the function
       return employeesArray
     //};
   }
@@ -70,7 +69,6 @@ const displayAverageSalary = function(employeesArray) {
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   // My instructor Dan wrote this comment: don't forget: Math.floor(Math.random()*# of employees)
-  // Select a random employee
   // The +JSON.stringify was used to convert the object into a string -- examples here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
   const randomEmployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
   // to follow the assignment guidelines use randomEmployee.firstName + " " + randomEmployee.lastName instead of +JSON.stringify(randomEmployee));
